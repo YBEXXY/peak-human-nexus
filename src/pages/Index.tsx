@@ -27,10 +27,11 @@ const Index = () => {
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="mb-8 text-center">
           <motion.h1 
-            className="text-6xl font-boldini font-bold text-glow-blue mb-2 tracking-wider"
+            className="text-6xl font-boldini font-bold mb-2 tracking-wider bg-gradient-to-r from-cyber-neon-blue via-cyber-neon-purple to-cyber-neon-pink text-transparent bg-clip-text animate-pulse-glow"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            style={{ "--glow-color": "rgba(153, 51, 255, 0.7)" } as React.CSSProperties}
           >
             PEAK HUMAN NEXUS
           </motion.h1>

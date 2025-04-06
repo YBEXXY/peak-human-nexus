@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,6 +67,10 @@
   }
   .text-glow-green {
     text-shadow: 0 0 10px theme('colors.cyber.neon.green'), 0 0 20px rgba(0, 255, 159, 0.5);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyber-neon-blue via-cyber-neon-purple to-cyber-neon-pink text-transparent bg-clip-text;
   }
   
   .cyber-panel {
