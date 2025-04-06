@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { characters } from "@/data/characters";
@@ -34,7 +35,7 @@ const Index = () => {
             PEAK HUMAN NEXUS
           </motion.h1>
           <motion.p 
-            className="text-xl text-white/80"
+            className="text-xl marine-corps-text"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
