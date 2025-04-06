@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -71,6 +72,26 @@
   
   .gradient-text {
     @apply bg-gradient-to-r from-cyber-neon-blue via-cyber-neon-purple to-cyber-neon-pink text-transparent bg-clip-text;
+  }
+  
+  .boldini-gradient {
+    @apply font-boldini font-bold tracking-wider;
+    background: linear-gradient(to right, 
+      theme('colors.cyber.neon.blue'), 
+      theme('colors.cyber.neon.purple') 45%, 
+      theme('colors.cyber.neon.pink') 75%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 5s ease infinite;
+    text-shadow: 0 0 15px rgba(153, 51, 255, 0.7);
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
   }
   
   .cyber-panel {
