@@ -1,5 +1,5 @@
 
-import { MotionValue, useTransform, useSpring, useScroll, MotionProps } from "framer-motion";
+import { MotionValue, useTransform, useSpring, useScroll, MotionProps, Variants } from "framer-motion";
 import { useRef } from "react";
 
 export const useSmoothTransform = (
@@ -28,7 +28,8 @@ export const useParallax = (distance: number = 100) => {
   return { ref, y };
 };
 
-export const variants = {
+// Basic animation variants used by most components
+export const variants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -60,57 +61,59 @@ export const variants = {
       duration: 0.1,
       ease: "easeIn"
     }
+  }
+};
+
+// Separate carousel variants
+export const carouselVariants = {
+  center: { 
+    scale: 1, 
+    opacity: 1, 
+    zIndex: 10,
+    filter: "brightness(1.2) drop-shadow(0 0 20px rgba(0, 230, 246, 0.4))",
+    y: 0,
+    rotateY: 0,
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut", 
+      delay: 0.1 
+    }
   },
-  carousel: {
-    center: { 
-      scale: 1, 
-      opacity: 1, 
-      zIndex: 10,
-      filter: "brightness(1.2) drop-shadow(0 0 20px rgba(0, 230, 246, 0.4))",
-      y: 0,
-      rotateY: 0,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut", 
-        delay: 0.1 
-      }
-    },
-    left: { 
-      scale: 0.8, 
-      opacity: 0.6, 
-      zIndex: 5,
-      filter: "brightness(0.8) drop-shadow(0 0 10px rgba(0, 230, 246, 0.2))",
-      y: 40,
-      rotateY: 15,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
-      }
-    },
-    right: { 
-      scale: 0.8, 
-      opacity: 0.6, 
-      zIndex: 5,
-      filter: "brightness(0.8) drop-shadow(0 0 10px rgba(0, 230, 246, 0.2))",
-      y: 40,
-      rotateY: -15,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
-      }
-    },
-    far: { 
-      scale: 0.6, 
-      opacity: 0.3, 
-      zIndex: 1,
-      filter: "brightness(0.6) drop-shadow(0 0 5px rgba(0, 230, 246, 0.1))",
-      y: 60,
-      rotateY: 30,
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
-      }
-    },
+  left: { 
+    scale: 0.8, 
+    opacity: 0.6, 
+    zIndex: 5,
+    filter: "brightness(0.8) drop-shadow(0 0 10px rgba(0, 230, 246, 0.2))",
+    y: 40,
+    rotateY: 15,
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" 
+    }
+  },
+  right: { 
+    scale: 0.8, 
+    opacity: 0.6, 
+    zIndex: 5,
+    filter: "brightness(0.8) drop-shadow(0 0 10px rgba(0, 230, 246, 0.2))",
+    y: 40,
+    rotateY: -15,
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" 
+    }
+  },
+  far: { 
+    scale: 0.6, 
+    opacity: 0.3, 
+    zIndex: 1,
+    filter: "brightness(0.6) drop-shadow(0 0 5px rgba(0, 230, 246, 0.1))",
+    y: 60,
+    rotateY: 30,
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" 
+    }
   }
 };
 

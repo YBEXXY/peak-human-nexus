@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Character } from "@/data/characters";
-import { variants } from "@/lib/animations";
+import { carouselVariants } from "@/lib/animations";
 
 interface CharacterCarouselProps {
   characters: Character[];
@@ -75,7 +75,7 @@ const CharacterCarousel: React.FC<CharacterCarouselProps> = ({
             <motion.div
               key={character.id}
               className="absolute cursor-pointer w-[200px] h-[280px] rounded-xl overflow-hidden"
-              variants={variants.carousel}
+              variants={carouselVariants}
               initial="far"
               animate={variant}
               style={{
